@@ -55,7 +55,7 @@ Wenn du das Repo per Git klonst, dann stattdessen:
 ```bash
 mkdir -p ~/apps
 cd ~/apps
-git clone <DEIN-REPO-ODER-COPY> ultimate-ki
+git clone https://github.com/dwhr-pi/Ultimate_KI_Setup.git ultimate-ki
 cd ultimate-ki
 ```
 
