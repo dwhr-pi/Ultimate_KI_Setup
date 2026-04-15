@@ -1,0 +1,35 @@
+{
+	email {$ACME_EMAIL}
+	admin off
+}
+
+{$DOMAIN} {
+	encode zstd gzip
+
+	log {
+		output stdout
+		format json
+	}
+
+	header {
+		X-Content-Type-Options "nosniff"
+		X-Frame-Options "SAMEORIGIN"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+	}
+
+	@health path /healthz
+	respond @health 200
+
+	handle_path /ollama/* {
+		reverse_proxy ollama:11434
+	}
+
+	handle /openclaw* {
+		reverse_proxy openclaw:18789
+	}
+
+	handle {
+		respond 200 "ultimate-ki proxy up"
+	}
+}

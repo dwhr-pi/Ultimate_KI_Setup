@@ -1,0 +1,49 @@
+{
+  "gateway": {
+    "mode": "local",
+    "port": 18789,
+    "bind": "lan",
+    "reload": {
+      "mode": "hybrid",
+      "debounceMs": 300
+    },
+    "auth": {
+      "mode": "token",
+      "token": "${OPENCLAW_GATEWAY_TOKEN}"
+    },
+    "controlUi": {
+      "enabled": true,
+      "basePath": "/openclaw",
+      "allowedOrigins": ["${OPENCLAW_ALLOWED_ORIGIN}"]
+    }
+  },
+  "agents": {
+    "defaults": {
+      "userTimezone": "${OPENCLAW_AGENT_TIMEZONE}",
+      "workspace": "/home/node/.openclaw/workspace",
+      "timeoutSeconds": 300,
+      "maxConcurrent": 2,
+      "verboseDefault": "off",
+      "elevatedDefault": "off",
+      "thinkingDefault": "medium",
+      "model": {
+        "primary": "${OPENCLAW_PRIMARY_MODEL}",
+        "fallbacks": ["${OPENCLAW_FALLBACK_MODEL}"]
+      }
+    }
+  },
+  "models": {
+    "providers": {
+      "ollama": {
+        "api": "ollama",
+        "apiKey": "${OLLAMA_API_KEY}",
+        "baseUrl": "${OLLAMA_HOST}",
+        "models": {
+          "llama3.2:1b": {
+            "alias": "local-fallback"
+          }
+        }
+      }
+    }
+  }
+}

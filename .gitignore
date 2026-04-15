@@ -1,0 +1,5 @@
+.env
+data/
+_upstream_repo/
+openclaw/.env
+openclaw/agents/
