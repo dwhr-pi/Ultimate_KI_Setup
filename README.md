@@ -58,6 +58,7 @@ Dabei gilt:
 - `docs/UBUNTU_DEPLOYMENT.md`
 - `docs/UBUNTU_CLEANUP.md`
 - `docs/DEPLOY_CHECKLIST.md`
+- `docs/FIRST_RUN.md`
 - `scripts/ubuntu_cleanup.sh`
 
 ## Schnellstart
@@ -89,6 +90,7 @@ Ausfuehrliche Schritt-fuer-Schritt-Dokumentation fuer Ubuntu und Cloudflare:
 - `docs/UBUNTU_DEPLOYMENT.md`
 - `docs/UBUNTU_CLEANUP.md`
 - `docs/DEPLOY_CHECKLIST.md`
+- `docs/FIRST_RUN.md`
 
 ## Healthchecks und Logging
 
